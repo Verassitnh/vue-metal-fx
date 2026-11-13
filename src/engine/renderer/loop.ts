@@ -122,7 +122,10 @@ export function updateInstance(
       startSharedLoop();
     }
   }
-  if (dirty) resizeInstanceCanvas(inst);
+  if (dirty) {
+    resizeInstanceCanvas(inst);
+    copyShaderToInstance(inst);
+  }
 }
 
 export function setInstanceVisible(inst: MetalFxInstance, visible: boolean): void {
